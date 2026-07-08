@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - LuxeCart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container d-flex justify-between align-center">
+            <a href="index.html" class="logo">Luxe<span>Cart</span>.</a>
+            <div class="nav-icons">
+                <a href="cart.html" class="icon-btn"><i class="fas fa-shopping-bag"></i><span class="badge cart-badge">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container d-flex flex-column" style="gap: 3rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                <!-- Product Image Gallery -->
+                <div>
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Product Image" style="border-radius: var(--radius-lg); width: 100%; box-shadow: var(--shadow-md);">
+                </div>
+
+                <!-- Product Info -->
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <span class="product-category" style="color: var(--secondary);">Footwear</span>
+                    <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Sport Running Shoes</h1>
+                    <div class="product-rating" style="margin-bottom: 1rem;">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 
+                        <span style="color: var(--text-muted);">(124 reviews)</span>
+                    </div>
+                    <div class="product-price-box" style="margin-bottom: 1.5rem;">
+                        <span class="product-price" style="font-size: 2rem;">$99.99</span>
+                        <span class="product-price-old" style="font-size: 1.25rem;">$129.99</span>
+                    </div>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Experience the ultimate comfort and performance with our premium sport running shoes. Built with breathable mesh and responsive cushioning technology.</p>
+                    
+                    <div class="d-flex align-center gap-1 mb-2">
+                        <div style="display: flex; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden;" class="qty-selector">
+                            <button style="padding: 0.75rem 1rem; border: none; background: var(--light);" class="qty-minus">-</button>
+                            <input type="text" value="1" style="width: 50px; text-align: center; border: none; outline: none; border-left: 1px solid var(--border); border-right: 1px solid var(--border);" class="qty-input">
+                            <button style="padding: 0.75rem 1rem; border: none; background: var(--light);" class="qty-plus">+</button>
+                        </div>
+                        <button class="btn btn-primary add-cart-btn" style="flex: 1; padding: 1rem;" data-id="p1" data-title="Sport Running Shoes" data-price="99.99" data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff" data-quantity="1">Add to Cart</button>
+                        <button class="btn btn-outline wishlist-btn" style="padding: 1rem;" data-id="p1" data-title="Sport Running Shoes" data-price="99.99" data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+</body>
+</html>

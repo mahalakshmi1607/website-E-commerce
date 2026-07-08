@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LuxeCart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form-control { width: 100%; padding: 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit; margin-bottom: 1.5rem; outline: none; }
+        .form-control:focus { border-color: var(--primary); }
+    </style>
+</head>
+<body style="background-color: var(--light);">
+    <header class="header">
+        <div class="container nav-container d-flex justify-between align-center">
+            <a href="index.html" class="logo">Luxe<span>Cart</span>.</a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="contact.html" class="nav-link" style="color: var(--primary);">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h1 class="section-title">Get in Touch</h1>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 4rem;">
+                
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="mb-2">We'd love to hear from you</h2>
+                    <p class="text-muted mb-2">Whether you have a question about shipping, a product, or you just want to say hi, our team is ready to answer all your questions.</p>
+                    
+                    <ul style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <li class="d-flex align-center gap-1">
+                            <div style="width: 50px; height: 50px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); box-shadow: var(--shadow-sm);"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem;">Our Office</h4>
+                                <p class="text-muted">123 E-Commerce Blvd, Tech City, 10010</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-center gap-1">
+                            <div style="width: 50px; height: 50px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); box-shadow: var(--shadow-sm);"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem;">Email Us</h4>
+                                <p class="text-muted">support@luxecart.com</p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-center gap-1">
+                            <div style="width: 50px; height: 50px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); box-shadow: var(--shadow-sm);"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem;">Call Us</h4>
+                                <p class="text-muted">+1 (800) 123-4567</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Form -->
+                <div style="background: var(--white); padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+                    <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Subject" required>
+                        <textarea class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Map Placeholder -->
+            <div style="margin-top: 4rem; width: 100%; height: 400px; background: #e5e7eb; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 1.5rem;">
+                <i class="fas fa-map-marked-alt" style="margin-right: 1rem;"></i> Google Map Embed Placeholder
+            </div>
+        </div>
+    </main>
+</body>
+</html>

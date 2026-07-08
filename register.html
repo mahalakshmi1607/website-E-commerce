@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - LuxeCart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .auth-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+        }
+        .form-group { margin-bottom: 1.5rem; position: relative; }
+        .form-control { width: 100%; padding: 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit; }
+        .form-control:focus { outline: none; border-color: var(--primary); }
+        .error-msg { color: var(--danger); font-size: 0.85rem; display: none; margin-top: 0.25rem; }
+        .toggle-password { position: absolute; right: 1rem; top: 1.1rem; cursor: pointer; color: var(--text-muted); }
+    </style>
+</head>
+<body style="background-color: var(--light);">
+    <header class="header">
+        <div class="container nav-container d-flex justify-center align-center">
+            <a href="index.html" class="logo">Luxe<span>Cart</span>.</a>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <div class="auth-container">
+                <h2 class="text-center mb-2" style="font-size: 2rem;">Create an Account</h2>
+                <p class="text-center text-muted mb-2">Join LuxeCart today</p>
+                
+                <form id="registerForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" class="form-control" placeholder="Email Address" required>
+                        <span class="error-msg" id="emailError">Please enter a valid email.</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" class="form-control" placeholder="Password" required>
+                        <i class="far fa-eye toggle-password" data-target="#password"></i>
+                        <span class="error-msg" id="passwordError">Password must be at least 8 characters.</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">Register</button>
+                </form>
+                
+                <p class="text-center mt-1" style="font-size: 0.9rem;">
+                    Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;">Log in</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/validation.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+            
+            let valid = true;
+            if (!window.FormValidator.validateEmail(email)) {
+                emailError.style.display = 'block';
+                valid = false;
+            } else { emailError.style.display = 'none'; }
+            
+            if (!window.FormValidator.validatePassword(password)) {
+                passwordError.style.display = 'block';
+                valid = false;
+            } else { passwordError.style.display = 'none'; }
+            
+            if (valid) {
+                alert("Registration successful! Redirecting to login...");
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+</body>
+</html>

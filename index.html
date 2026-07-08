@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeCart - Premium E-Commerce</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container nav-container d-flex justify-between align-center">
+            <a href="index.html" class="logo">Luxe<span>Cart</span>.</a>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products, brands...">
+                <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                
+                <div class="nav-icons d-flex d-md-none mt-1">
+                    <!-- Displayed in mobile menu if needed, but handled globally via CSS -->
+                </div>
+            </nav>
+
+            <div class="nav-icons">
+                <a href="login.html" class="icon-btn" aria-label="User Profile"><i class="far fa-user"></i></a>
+                <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+                    <i class="far fa-heart"></i>
+                    <span class="badge wishlist-badge">0</span>
+                </a>
+                <a href="cart.html" class="icon-btn" aria-label="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="badge cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner Section -->
+        <section class="hero-banner" style="background: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=80') center/cover; padding: 100px 0; color: white; text-align: center;">
+            <div class="container">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem; font-weight: 800;">Discover Your True Style</h1>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.9;">Explore our latest premium collection. High-quality fashion, electronics, and accessories with exclusive discounts.</p>
+                <a href="shop.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Shop The Collection <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Shop by Category</h2>
+                <div class="category-grid">
+                    <!-- Category 1 -->
+                    <a href="shop.html?category=electronics" class="product-card" style="text-align: center; padding-bottom: 1rem;">
+                        <div class="product-image-container mb-1">
+                            <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=500&q=80" alt="Electronics">
+                        </div>
+                        <h3 style="color: var(--dark);">Electronics</h3>
+                    </a>
+                    <!-- Category 2 -->
+                    <a href="shop.html?category=fashion" class="product-card" style="text-align: center; padding-bottom: 1rem;">
+                        <div class="product-image-container mb-1">
+                            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=500&q=80" alt="Fashion">
+                        </div>
+                        <h3 style="color: var(--dark);">Fashion</h3>
+                    </a>
+                    <!-- Category 3 -->
+                    <a href="shop.html?category=accessories" class="product-card" style="text-align: center; padding-bottom: 1rem;">
+                        <div class="product-image-container mb-1">
+                            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=500&q=80" alt="Accessories">
+                        </div>
+                        <h3 style="color: var(--dark);">Accessories</h3>
+                    </a>
+                     <!-- Category 4 -->
+                    <a href="shop.html?category=footwear class="product-card" style="text-align: center; padding-bottom: 1rem;">
+                        <div class="product-image-container mb-1">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="Footwear" >
+                        </div>
+                        <h3 style="color: var(--dark);">Footwear</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Selling Products -->
+        <section class="section" style="background-color: var(--white);">
+            <div class="container">
+                <h2 class="section-title">Best Selling Products</h2>
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="Running Shoes">
+                            <div class="product-actions">
+                                <button class="action-btn wishlist-btn" aria-label="Add to Wishlist" data-id="p1" data-title="Sport Running Shoes" data-price="99.99" data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80"><i class="far fa-heart"></i></button>
+                                <a href="product.html?id=p1" class="action-btn" aria-label="Quick View"><i class="far fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Footwear</span>
+                            <h3 class="product-title"><a href="product.html?id=p1">Sport Running Shoes</a></h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="product-price">$99.99</span>
+                                <span class="product-price-old">$129.99</span>
+                            </div>
+                            <button class="btn btn-outline add-cart-btn" data-id="p1" data-title="Sport Running Shoes" data-price="99.99" data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80" alt="Cotton T-Shirt">
+                            <div class="product-actions">
+                                <button class="action-btn wishlist-btn" data-id="p2" data-title="Classic Cotton T-Shirt" data-price="29.00" data-image="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80"><i class="far fa-heart"></i></button>
+                                <a href="product.html?id=p2" class="action-btn"><i class="far fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Apparel</span>
+                            <h3 class="product-title"><a href="product.html?id=p2">Classic Cotton T-Shirt</a></h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="product-price">$29.00</span>
+                            </div>
+                            <button class="btn btn-outline add-cart-btn" data-id="p2" data-title="Classic Cotton T-Shirt" data-price="29.00" data-image="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=500&q=80" alt="Smart Watch">
+                            <div class="product-actions">
+                                <button class="action-btn wishlist-btn" data-id="p3" data-title="Minimalist Smartwatch" data-price="149.99" data-image="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=500&q=80"><i class="far fa-heart"></i></button>
+                                <a href="product.html?id=p3" class="action-btn"><i class="far fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Electronics</span>
+                            <h3 class="product-title"><a href="product.html?id=p3">Minimalist Smartwatch</a></h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="product-price">$149.99</span>
+                                <span class="product-price-old">$199.99</span>
+                            </div>
+                            <button class="btn btn-outline add-cart-btn" data-id="p3" data-title="Minimalist Smartwatch" data-price="149.99" data-image="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=500&q=80">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=500&q=80" alt="Leather Jacket">
+                            <div class="product-actions">
+                                <button class="action-btn wishlist-btn" data-id="p4" data-title="Premium Leather Jacket" data-price="199.00" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=500&q=80"><i class="far fa-heart"></i></button>
+                                <a href="product.html?id=p4" class="action-btn"><i class="far fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Apparel</span>
+                            <h3 class="product-title"><a href="product.html?id=p4">Premium Leather Jacket</a></h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="product-price-box">
+                                <span class="product-price">$199.00</span>
+                            </div>
+                            <button class="btn btn-outline add-cart-btn" data-id="p4" data-title="Premium Leather Jacket" data-price="199.00" data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=500&q=80">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flash Sale / Countdown Banner -->
+        <section class="section" style="background-color: var(--primary); color: white;">
+            <div class="container d-flex flex-column align-center text-center">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Flash Sale 50% Off!</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Offer ends in:</p>
+                <div class="d-flex gap-1 justify-center mb-2" id="countdown" style="font-size: 1.5rem; font-weight: bold; background: rgba(0,0,0,0.2); padding: 1rem 2rem; border-radius: var(--radius-lg);">
+                    <span>24h : 59m : 59s</span> <!-- Placeholder for actual JS countdown -->
+                </div>
+                <a href="shop.html" class="btn btn-outline" style="color: white; border-color: white;">Shop Deals Now</a>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="section text-center">
+            <div class="container">
+                <h2 class="section-title">Join Our Newsletter</h2>
+                <p class="mb-2 text-muted">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+                <form class="d-flex justify-center gap-1" style="max-width: 500px; margin: 0 auto;">
+                    <input type="email" placeholder="Enter your email address" required style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-md); outline: none;">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <a href="index.html" class="logo" style="color: white;">Luxe<span>Cart</span>.</a>
+                <p class="mt-1" style="font-size: 0.9rem;">The best premium e-commerce store. Delivering quality products right to your doorstep since 2026.</p>
+                <div class="social-icons mt-1">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-title">Customer Support</h4>
+                <ul class="footer-links">
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="login.html">Login / Register</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="footer-title">Legal Info</h4>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LuxeCart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+</body>
+</html>

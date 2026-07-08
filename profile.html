@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - LuxeCart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: var(--light);">
+    <header class="header">
+        <div class="container nav-container d-flex justify-between align-center">
+            <a href="index.html" class="logo">Luxe<span>Cart</span>.</a>
+            <div class="nav-icons">
+                <a href="cart.html" class="icon-btn"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 250px 1fr; gap: 2rem;">
+                
+                <!-- Sidebar -->
+                <aside style="background: var(--white); padding: 2rem; border-radius: var(--radius-lg); height: fit-content; box-shadow: var(--shadow-sm);">
+                    <div class="text-center mb-2">
+                        <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin: 0 auto 1rem;">
+                            <i class="far fa-user"></i>
+                        </div>
+                        <h3 style="font-size: 1.2rem;">John Doe</h3>
+                        <p class="text-muted" style="font-size: 0.9rem;">john@example.com</p>
+                    </div>
+                    <ul style="display: flex; flex-direction: column; gap: 1rem;">
+                        <li><a href="#" style="color: var(--primary); font-weight: 600;"><i class="fas fa-user-circle" style="width: 25px;"></i> Account Details</a></li>
+                        <li><a href="#"><i class="fas fa-box" style="width: 25px;"></i> Orders</a></li>
+                        <li><a href="wishlist.html"><i class="fas fa-heart" style="width: 25px;"></i> Wishlist</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt" style="width: 25px;"></i> Addresses</a></li>
+                        <li><a href="index.html" style="color: var(--danger); margin-top: 1rem; display: block;"><i class="fas fa-sign-out-alt" style="width: 25px;"></i> Logout</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Content -->
+                <div style="background: var(--white); padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+                    <h2 class="mb-2">Account Details</h2>
+                    <form>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">First Name</label>
+                                <input type="text" value="John" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); outline: none;">
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Last Name</label>
+                                <input type="text" value="Doe" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); outline: none;">
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address</label>
+                            <input type="email" value="john@example.com" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-sm); outline: none;">
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="window.showToast('Profile Updated Successfully!')">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

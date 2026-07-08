@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - LuxeCart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container d-flex justify-between align-center">
+            <a href="index.html" class="logo">Luxe<span>Cart</span>.</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link" style="color: var(--primary);">Shop</a>
+                <a href="categories.html" class="nav-link">Categories</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-icons">
+                <a href="login.html" class="icon-btn"><i class="far fa-user"></i></a>
+                <a href="wishlist.html" class="icon-btn"><i class="far fa-heart"></i><span class="badge wishlist-badge">0</span></a>
+                <a href="cart.html" class="icon-btn"><i class="fas fa-shopping-bag"></i><span class="badge cart-badge">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="section" style="background-color: var(--dark); color: white; padding: 3rem 0; text-align: center;">
+            <div class="container">
+                <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">All Products</h1>
+                <p style="color: var(--text-muted);">Home / Shop</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container d-flex" style="gap: 2rem;">
+                
+                <!-- Sidebar Filters -->
+                <aside style="width: 250px; flex-shrink: 0;" class="d-none d-md-block">
+                    <h3 class="mb-1">Categories</h3>
+                    <ul style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem;">
+                        <li><a href="#" class="category-filter-link" data-category="all">All Products</a></li>
+                        <li><a href="#" class="category-filter-link" data-category="electronics">Electronics</a></li>
+                        <li><a href="#" class="category-filter-link" data-category="fashion">Fashion</a></li>
+                        <li><a href="#" class="category-filter-link" data-category="footwear">Footwear</a></li>
+                        <li><a href="#" class="category-filter-link" data-category="accessories">Accessories</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Product Grid -->
+                <div style="flex: 1;">
+                    <div class="d-flex justify-between align-center mb-2">
+                        <p id="result-count">Showing results</p>
+                        <select id="sort-select" style="padding: 0.5rem; border: 1px solid var(--border); border-radius: var(--radius-sm); outline: none;">
+                            <option value="default">Default Sorting</option>
+                            <option value="low-high">Price: Low to High</option>
+                            <option value="high-low">Price: High to Low</option>
+                        </select>
+                    </div>
+
+                    <div id="shop-product-grid" class="product-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+                        <!-- JS populated via shop.js -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 LuxeCart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/products.js"></script> <!-- Data -->
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/shop.js"></script> <!-- Shop Logic -->
+</body>
+</html>

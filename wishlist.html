@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - LuxeCart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container d-flex justify-between align-center">
+            <a href="index.html" class="logo">Luxe<span>Cart</span>.</a>
+            <div class="nav-icons">
+                <a href="wishlist.html" class="icon-btn"><i class="fas fa-heart"></i><span class="badge wishlist-badge">0</span></a>
+                <a href="cart.html" class="icon-btn"><i class="fas fa-shopping-bag"></i><span class="badge cart-badge">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h1 class="section-title">My Wishlist</h1>
+            <p id="empty-wishlist" class="text-center text-muted" style="display: none; padding: 2rem;">Your wishlist is empty.</p>
+            <div class="product-grid" id="wishlist-container" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+                <!-- JS populated -->
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('wishlist-container');
+            const emptyMsg = document.getElementById('empty-wishlist');
+
+            function renderWishlist() {
+                const items = window.WishlistManager.items;
+                if (items.length === 0) {
+                    emptyMsg.style.display = 'block';
+                    container.innerHTML = '';
+                    return;
+                }
+                
+                emptyMsg.style.display = 'none';
+                container.innerHTML = '';
+                
+                items.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'product-card';
+                    div.innerHTML = `
+                        <div class="product-image-container">
+                            <img src="${item.image}" alt="Product">
+                            <div class="product-actions">
+                                <button class="action-btn" style="color: var(--danger);" onclick="window.WishlistManager.toggle({id: '${item.id}'}); renderWishlist();"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">${item.title}</h3>
+                            <div class="product-price-box">
+                                <span class="product-price">$${item.price.toFixed(2)}</span>
+                            </div>
+                            <button class="btn btn-primary add-cart-btn" data-id="${item.id}" data-title="${item.title}" data-price="${item.price}" data-image="${item.image}">
+                                <i class="fas fa-shopping-cart"></i> Move to Cart
+                            </button>
+                        </div>
+                    `;
+                    container.appendChild(div);
+                });
+            }
+            
+            renderWishlist();
+            
+            // Re-render when "Move to Cart" happens if we want, or just let it be.
+            document.addEventListener('click', (e) => {
+                if (e.target.closest('.add-cart-btn')) {
+                    const btn = e.target.closest('.add-cart-btn');
+                    // Automatically remove from wishlist when moved to cart
+                    window.WishlistManager.toggle({id: btn.dataset.id});
+                    renderWishlist();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

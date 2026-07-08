@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - LuxeCart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container d-flex justify-between align-center">
+            <a href="index.html" class="logo">Luxe<span>Cart</span>.</a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="categories.html" class="nav-link" style="color: var(--primary);">Categories</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h1 class="section-title">All Categories</h1>
+            <div class="category-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 2rem;">
+                <!-- Electronics -->
+                <a href="shop.html?category=electronics" class="product-card" style="text-align: center; padding-bottom: 1rem;">
+                    <div class="product-image-container mb-1" style="aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+                        <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=500&q=80" alt="Electronics" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--dark);">Electronics</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">124 Products</p>
+                </a>
+                <!-- Fashion -->
+                <a href="shop.html?category=fashion" class="product-card" style="text-align: center; padding-bottom: 1rem;">
+                    <div class="product-image-container mb-1" style="aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=500&q=80" alt="Fashion" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--dark);">Fashion</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">350 Products</p>
+                </a>
+                <!-- Accessories -->
+                <a href="shop.html?category=accessories" class="product-card" style="text-align: center; padding-bottom: 1rem;">
+                    <div class="product-image-container mb-1" style="aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+                        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=500&q=80" alt="Accessories" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--dark);">Accessories</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">89 Products</p>
+                </a>
+                <!-- Footwear -->
+                <a href="shop.html?category=footwear" class="product-card" style="text-align: center; padding-bottom: 1rem;">
+                    <div class="product-image-container mb-1" style="aspect-ratio: 1; overflow: hidden; border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="Footwear" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <h3 style="color: var(--dark);">Footwear</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">215 Products</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 LuxeCart. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

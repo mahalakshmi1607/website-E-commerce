@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - LuxeCart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container d-flex justify-between align-center">
+            <a href="index.html" class="logo">Luxe<span>Cart</span>.</a>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h1 class="section-title">Shopping Cart</h1>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                
+                <!-- Cart Items List -->
+                <div style="flex: 2; background: var(--white); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);" id="cart-container">
+                    <p id="empty-msg">Your cart is empty.</p>
+                    <table style="width: 100%; border-collapse: collapse; text-align: left;" id="cart-table">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--border);">
+                                <th style="padding-bottom: 1rem;">Product</th>
+                                <th style="padding-bottom: 1rem;">Price</th>
+                                <th style="padding-bottom: 1rem;">Quantity</th>
+                                <th style="padding-bottom: 1rem;">Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-body">
+                            <!-- JS populated -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Order Summary -->
+                <div style="flex: 1; background: var(--white); padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); height: fit-content;">
+                    <h3 class="mb-2">Order Summary</h3>
+                    <div class="d-flex justify-between mb-1">
+                        <span style="color: var(--text-muted);">Subtotal</span>
+                        <span id="summary-subtotal">$0.00</span>
+                    </div>
+                    <div class="d-flex justify-between mb-2">
+                        <span style="color: var(--text-muted);">Shipping</span>
+                        <span>$10.00</span>
+                    </div>
+                    <div class="d-flex justify-between mb-2" style="border-top: 1px solid var(--border); padding-top: 1rem;">
+                        <span style="font-weight: bold; font-size: 1.2rem;">Total</span>
+                        <span style="font-weight: bold; font-size: 1.2rem; color: var(--primary);" id="summary-total">$0.00</span>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" id="pay-now-btn">Pay Now (Checkout)</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Render cart specific logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const tbody = document.getElementById('cart-body');
+            const emptyMsg = document.getElementById('empty-msg');
+            const table = document.getElementById('cart-table');
+            const subtotalEl = document.getElementById('summary-subtotal');
+            const totalEl = document.getElementById('summary-total');
+            const payBtn = document.getElementById('pay-now-btn');
+
+            payBtn.addEventListener('click', () => {
+                const items = window.CartManager.items;
+                if (items.length === 0) {
+                    alert("Your cart is empty!");
+                    return;
+                }
+                alert("Payment Successful! Thank you for purchasing from LuxeCart. Your Raspberry Pi and other items will be shipped soon!");
+                // Clear cart
+                window.CartManager.items = [];
+                window.CartManager.save();
+                renderCartPage();
+            });
+
+            function renderCartPage() {
+                const items = window.CartManager.items;
+                if (items.length === 0) {
+                    table.style.display = 'none';
+                    emptyMsg.style.display = 'block';
+                    subtotalEl.textContent = '$0.00';
+                    totalEl.textContent = '$0.00';
+                    return;
+                }
+                
+                table.style.display = 'table';
+                emptyMsg.style.display = 'none';
+                tbody.innerHTML = '';
+                
+                items.forEach(item => {
+                    const tr = document.createElement('tr');
+                    tr.style.borderBottom = '1px solid var(--border)';
+                    tr.innerHTML = `
+                        <td style="padding: 1rem 0; display: flex; align-items: center; gap: 1rem;">
+                            <img src="${item.image}" style="width: 60px; height: 60px; border-radius: 5px; object-fit: cover;">
+                            <span style="font-weight: 500;">${item.title}</span>
+                        </td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td>
+                            <input type="number" min="1" value="${item.quantity}" style="width: 60px; padding: 0.5rem;" onchange="window.CartManager.updateQuantity('${item.id}', parseInt(this.value)); renderCartPage();">
+                        </td>
+                        <td style="font-weight: bold;">$${(item.price * item.quantity).toFixed(2)}</td>
+                        <td><button style="border: none; background: none; color: var(--danger); cursor: pointer;" onclick="window.CartManager.remove('${item.id}'); renderCartPage();"><i class="fas fa-trash"></i></button></td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+                
+                const total = window.CartManager.getTotal();
+                subtotalEl.textContent = '$' + total.toFixed(2);
+                totalEl.textContent = '$' + (total + 10).toFixed(2);
+            }
+            
+            renderCartPage();
+        });
+    </script>
+</body>
+</html>
